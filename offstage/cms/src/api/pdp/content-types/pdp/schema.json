@@ -1,0 +1,112 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pdps",
+  "info": {
+    "singularName": "pdp",
+    "pluralName": "pdps",
+    "displayName": "PDP",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "retailerUid": {
+      "type": "uid",
+      "private": true
+    },
+    "product": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "pdps"
+    },
+    "isAvailable": {
+      "type": "boolean",
+      "default": true
+    },
+    "fullPrice": {
+      "type": "decimal"
+    },
+    "nowPrice": {
+      "type": "decimal"
+    },
+    "summary": {
+      "type": "text"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "lastScanned": {
+      "type": "datetime"
+    },
+    "isVariation": {
+      "type": "boolean"
+    },
+    "type": {
+      "type": "string"
+    },
+    "media": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images", "videos", "audios"]
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "urls": {
+      "type": "component",
+      "repeatable": false,
+      "component": "meta.urls"
+    },
+    "tempMediaUrls": {
+      "type": "text"
+    },
+    "descriptionString": {
+      "type": "text"
+    },
+    "size": {
+      "type": "string"
+    },
+    "madeWith": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "jsonLd": {
+      "type": "json"
+    },
+    "longDescription": {
+      "type": "text"
+    },
+    "longDescriptionHtml": {
+      "type": "richtext"
+    },
+    "shortDescription": {
+      "type": "text"
+    },
+    "releaseDate": {
+      "type": "string"
+    },
+    "regularPrice": {
+      "type": "decimal"
+    },
+    "salePrice": {
+      "type": "decimal"
+    },
+    "apiData": {
+      "type": "json"
+    },
+    "storefront": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::storefront.storefront"
+    }
+  }
+}

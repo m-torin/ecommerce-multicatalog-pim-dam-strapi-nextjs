@@ -40,6 +40,12 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
 
 # TypeScript v1 declaration files
 typings/
@@ -102,3 +108,8 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Etc
+.DS_Store
+.env.local
+cms-schemas.d.ts

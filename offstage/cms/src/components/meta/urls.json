@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_meta_urls",
+  "info": {
+    "displayName": "urls",
+    "icon": "external-link-square-alt",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "canonicalUrl": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.url"
+    },
+    "alternateUrls": {
+      "type": "component",
+      "repeatable": true,
+      "component": "general.url"
+    },
+    "iframeUrl": {
+      "type": "string"
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_lodgings",
+  "info": {
+    "singularName": "meta-lodging",
+    "pluralName": "meta-lodgings",
+    "displayName": "Meta: Lodging",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "lodgings"
+    },
+    "entertainment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meta-entertainment.meta-entertainment",
+      "mappedBy": "lodging"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "disneyResort",
+        "offpropHotel"
+      ]
+    },
+    "catalogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::catalog.catalog",
+      "mappedBy": "lodgings"
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::meta-destination.meta-destination",
+      "inversedBy": "lodgings"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    }
+  }
+}

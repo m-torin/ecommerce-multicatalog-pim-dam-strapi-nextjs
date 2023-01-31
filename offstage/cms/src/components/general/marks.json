@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_general_marks",
+  "info": {
+    "displayName": "Logos & Marks",
+    "icon": "otter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "square": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "horizontal": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

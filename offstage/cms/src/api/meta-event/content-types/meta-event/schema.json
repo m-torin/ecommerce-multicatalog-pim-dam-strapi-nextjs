@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_events",
+  "info": {
+    "singularName": "meta-event",
+    "pluralName": "meta-events",
+    "displayName": "Meta: Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "cast": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-cast.meta-cast",
+      "inversedBy": "events"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "events"
+    },
+    "location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::meta-location.meta-location",
+      "inversedBy": "events"
+    },
+    "destination": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::meta-destination.meta-destination",
+      "inversedBy": "events"
+    },
+    "catalogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::catalog.catalog",
+      "mappedBy": "events"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "annual",
+        "oneoff"
+      ],
+      "default": "annual"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    }
+  }
+}

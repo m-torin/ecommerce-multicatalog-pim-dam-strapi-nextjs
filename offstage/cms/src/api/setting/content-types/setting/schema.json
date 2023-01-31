@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "settings",
+  "info": {
+    "singularName": "setting",
+    "pluralName": "settings",
+    "displayName": "Settings",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "chartSitemaps": {
+      "type": "boolean",
+      "default": true
+    },
+    "chartPdps": {
+      "type": "boolean",
+      "default": true
+    },
+    "importMedia": {
+      "type": "boolean",
+      "default": true
+    },
+    "upkeepProducts": {
+      "type": "boolean",
+      "default": true
+    },
+    "upkeepPdps": {
+      "type": "boolean",
+      "default": true
+    },
+    "lastUpdateBaseline": {
+      "type": "datetime"
+    },
+    "onlyBaseUrl": {
+      "type": "string"
+    },
+    "debugLogs": {
+      "type": "boolean",
+      "default": true
+    },
+    "bestBuyQueries": {
+      "type": "string"
+    }
+  }
+}

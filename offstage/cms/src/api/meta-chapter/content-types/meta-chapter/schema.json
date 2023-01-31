@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_chapters",
+  "info": {
+    "singularName": "meta-chapter",
+    "pluralName": "meta-chapters",
+    "displayName": "Meta: Chapter",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "story": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::meta-story.meta-story",
+      "inversedBy": "chapters"
+    },
+    "cast": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-cast.meta-cast",
+      "mappedBy": "chapters"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-collection.product-collection",
+      "mappedBy": "chapter"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "chapter"
+    },
+    "isRetelling": {
+      "type": "boolean",
+      "default": false
+    },
+    "catalogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::catalog.catalog",
+      "mappedBy": "chapters"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.marks"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    }
+  }
+}

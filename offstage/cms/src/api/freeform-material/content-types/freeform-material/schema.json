@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "freeform_materials",
+  "info": {
+    "singularName": "freeform-material",
+    "pluralName": "freeform-materials",
+    "displayName": "Freeform: Materials"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "meta.freeform"
+    }
+  }
+}

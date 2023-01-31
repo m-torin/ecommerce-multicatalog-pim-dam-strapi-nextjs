@@ -1,0 +1,101 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_destinations",
+  "info": {
+    "singularName": "meta-destination",
+    "pluralName": "meta-destinations",
+    "displayName": "Meta: Destination",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-location.meta-location",
+      "inversedBy": "destinations"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-collection.product-collection",
+      "inversedBy": "destinations"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "destinations"
+    },
+    "children": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meta-destination.meta-destination",
+      "mappedBy": "parent"
+    },
+    "parent": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::meta-destination.meta-destination",
+      "inversedBy": "children"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meta-event.meta-event",
+      "mappedBy": "destination"
+    },
+    "entertainment": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-entertainment.meta-entertainment",
+      "mappedBy": "destinations"
+    },
+    "catalogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::catalog.catalog",
+      "mappedBy": "destinations"
+    },
+    "lodgings": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meta-lodging.meta-lodging",
+      "mappedBy": "destination"
+    },
+    "attractions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-attraction.meta-attraction",
+      "inversedBy": "destinations"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.marks"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "kind": "collectionType",
+  "collectionName": "catalogs",
+  "info": {
+    "singularName": "catalog",
+    "pluralName": "catalogs",
+    "displayName": "Catalog",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "baseUrl": {
+      "type": "string"
+    },
+    "splashProd": {
+      "type": "boolean",
+      "default": false
+    },
+    "splashPrev": {
+      "type": "boolean",
+      "default": false
+    },
+    "prevbaseUrl": {
+      "type": "string"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-collection.product-collection",
+      "mappedBy": "catalogs"
+    },
+    "productGroups": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-group.product-group",
+      "inversedBy": "catalogs"
+    },
+    "productTags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-tag.product-tag",
+      "inversedBy": "catalogs"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-team.meta-team",
+      "inversedBy": "catalogs"
+    },
+    "stories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-story.meta-story",
+      "inversedBy": "catalogs"
+    },
+    "lodgings": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-lodging.meta-lodging",
+      "inversedBy": "catalogs"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-event.meta-event",
+      "inversedBy": "catalogs"
+    },
+    "entertainment": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-entertainment.meta-entertainment",
+      "inversedBy": "catalogs"
+    },
+    "destinations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-destination.meta-destination",
+      "inversedBy": "catalogs"
+    },
+    "chapters": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-chapter.meta-chapter",
+      "inversedBy": "catalogs"
+    },
+    "cast": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-cast.meta-cast",
+      "inversedBy": "catalogs"
+    },
+    "attractions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-attraction.meta-attraction",
+      "inversedBy": "catalogs"
+    }
+  }
+}

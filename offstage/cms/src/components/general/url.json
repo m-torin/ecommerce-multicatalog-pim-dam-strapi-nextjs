@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_general_urls",
+  "info": {
+    "displayName": "URL",
+    "icon": "link",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "url": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
