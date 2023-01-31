@@ -1,0 +1,43 @@
+{
+  "name": "ecommerce-multicatalog-pim-strapi-nextjs",
+  "description": "",
+  "scripts": {
+    "audit": "yarn npm audit --all --recursive",
+    "ws:clean": "yarn workspaces foreach -ptv --include '@workspaces/*' run clean",
+    "ws:list": "yarn workspaces list",
+    "ws:up": "yarn upgrade-interactive",
+    "dev": "turbo run dev",
+    "dev:cms": "turbo run dev --filter=@ecommerce-multicatalog-pim-strapi-nextjs/cms",
+    "dev:shops": "turbo run dev:all --filter=@ecommerce-multicatalog-pim-strapi-nextjs/shops",
+    "build": "turbo run build --continue",
+    "build:cms": "turbo run build --filter=@ecommerce-multicatalog-pim-strapi-nextjs/cms",
+    "build:shops": "turbo run build --filter=@ecommerce-multicatalog-pim-strapi-nextjs/shops",
+    "start": "turbo run start",
+    "start:cms": "turbo run start --filter=@ecommerce-multicatalog-pim-strapi-nextjs/cms",
+    "start:shops": "turbo run start --filter=@ecommerce-multicatalog-pim-strapi-nextjs/shops",
+    "doppler": "turbo run doppler"
+  },
+  "devDependencies": {
+    "turbo": "1.7.0"
+  },
+  "private": true,
+  "workspaces": [
+    "offstage/*",
+    "onstage/*"
+  ],
+  "homepage": "https://github.com/m-torin/ecommerce-multicatalog-pim-strapi-nextjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/m-torin/ecommerce-multicatalog-pim-strapi-nextjs.git"
+  },
+  "author": {
+    "name": "Torin Taylor",
+    "url": "https://github.com/m-torin"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.x",
+    "yarn": ">=3.x"
+  },
+  "packageManager": "yarn@3.3.1"
+}

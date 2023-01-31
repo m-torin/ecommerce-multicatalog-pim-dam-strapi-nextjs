@@ -1,0 +1,16 @@
+# Folders
+.cache
+.tmp
+.turbo
+dist
+node_modules
+
+# Files
+.dockerignore
+.editorconfig
+.env
+.env.local
+clean-everything.sh
+Dockerfile
+export_*
+fly.toml

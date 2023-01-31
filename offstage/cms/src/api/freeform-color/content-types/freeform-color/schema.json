@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "freeform_colors",
+  "info": {
+    "singularName": "freeform-color",
+    "pluralName": "freeform-colors",
+    "displayName": "Freeform: Colors"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "options": {
+      "type": "component",
+      "repeatable": true,
+      "component": "meta.freeform"
+    }
+  }
+}

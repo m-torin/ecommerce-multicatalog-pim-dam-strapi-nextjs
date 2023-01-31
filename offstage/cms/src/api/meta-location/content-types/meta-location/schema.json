@@ -1,0 +1,89 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_locations",
+  "info": {
+    "singularName": "meta-location",
+    "pluralName": "meta-locations",
+    "displayName": "Meta: Location",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "attractions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-attraction.meta-attraction",
+      "mappedBy": "locations"
+    },
+    "entertainment": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meta-entertainment.meta-entertainment",
+      "mappedBy": "location"
+    },
+    "events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meta-event.meta-event",
+      "mappedBy": "location"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product.product",
+      "mappedBy": "location"
+    },
+    "destinations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-destination.meta-destination",
+      "mappedBy": "locations"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "fictional",
+        "real"
+      ],
+      "default": "fictional"
+    },
+    "catalogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::catalog.catalog"
+    },
+    "stories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-story.meta-story",
+      "mappedBy": "locations"
+    },
+    "teams": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meta-team.meta-team",
+      "mappedBy": "location"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    }
+  }
+}

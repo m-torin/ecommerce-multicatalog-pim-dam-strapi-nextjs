@@ -1,0 +1,62 @@
+{
+  "name": "@ecommerce-multicatalog-pim-strapi-nextjs/cms",
+  "private": true,
+  "scripts": {
+    "dev": "yarn develop",
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "yarn generate-types && strapi build",
+    "generate-types": "strapi ts:generate-types -f cms-schemas.d.ts",
+    "doppler": "doppler secrets download --token=$DOPPLER_TOKEN_CMS --no-file --format env > .env",
+    "docker": "yarn docker:build && yarn docker:run",
+    "docker:build": "docker build -t ecommerce-multicatalog-pim-strapi-nextjs/cms .",
+    "docker:run": "docker run -e DOPPLER_TOKEN=\"$DOPPLER_TOKEN_CMS\" -p 2200:2200 ecommerce-multicatalog-pim-strapi-nextjs/cms",
+    "strapi": "strapi",
+    "strapi:import": "strapi import",
+    "strapi:export": "strapi export"
+  },
+  "dependencies": {
+    "@mattie-bundle/strapi-plugin-search": "1.0.0-alpha.3",
+    "@mattie-bundle/strapi-provider-search-algolia": "1.0.0-alpha.3",
+    "@strapi/plugin-documentation": "4.6.0",
+    "@strapi/plugin-graphql": "4.6.0",
+    "@strapi/plugin-i18n": "4.6.0",
+    "@strapi/plugin-sentry": "4.6.0",
+    "@strapi/plugin-users-permissions": "4.6.0",
+    "@strapi/strapi": "4.6.0",
+    "@strapi/typescript-utils": "^4.5.6",
+    "axios": "1.2.6",
+    "better-sqlite3": "8.0.1",
+    "crypto": "1.0.1",
+    "form-data": "4.0.0",
+    "isomorphic-unfetch": "4.0.2",
+    "mysql": "2.18.1",
+    "pg-connection-string": "2.5.0",
+    "react-select": "5.7.0",
+    "scrapingbee": "1.6.1",
+    "slug": "^8.2.2",
+    "strapi-plugin-config-sync": "1.1.0",
+    "strapi-plugin-random-sort": "0.0.3",
+    "strapi-plugin-redis": "1.0.1",
+    "strapi-plugin-rest-cache": "4.2.6",
+    "strapi-provider-rest-cache-redis": "4.2.6",
+    "strapi-provider-upload-cloudflare-r2": "1.0.2",
+    "uid": "2.0.1",
+    "webpack": "5.75.0",
+    "whatwg-fetch": "3.6.2"
+  },
+  "devDependencies": {
+    "@sentry/types": "7.34.0",
+    "@types/mysql": "2.15.21",
+    "@types/slug": "5.0.3"
+  },
+  "strapi": {
+    "uuid": ""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.x",
+    "yarn": ">=3.x"
+  },
+  "packageManager": "yarn@3.3.1"
+}

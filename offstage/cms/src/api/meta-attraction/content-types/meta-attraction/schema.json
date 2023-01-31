@@ -1,0 +1,82 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_attractions",
+  "info": {
+    "singularName": "meta-attraction",
+    "pluralName": "meta-attractions",
+    "displayName": "Meta: Attraction",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "cast": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-cast.meta-cast",
+      "inversedBy": "attractions"
+    },
+    "catalogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::catalog.catalog",
+      "mappedBy": "attractions"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-collection.product-collection",
+      "inversedBy": "attractions"
+    },
+    "destinations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-destination.meta-destination",
+      "mappedBy": "attractions"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-location.meta-location",
+      "inversedBy": "attractions"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.marks"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "mappedBy": "attractions"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    },
+    "stories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-story.meta-story",
+      "inversedBy": "attractions"
+    }
+  }
+}

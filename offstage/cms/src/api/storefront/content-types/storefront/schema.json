@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "storefronts",
+  "info": {
+    "singularName": "storefront",
+    "pluralName": "storefronts",
+    "displayName": "Storefront",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "brands": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::brand.brand",
+      "inversedBy": "storefronts"
+    },
+    "baseUrl": {
+      "type": "string",
+      "required": true
+    },
+    "logos": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.marks"
+    }
+  }
+}

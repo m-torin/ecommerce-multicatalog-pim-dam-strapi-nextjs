@@ -1,0 +1,103 @@
+{
+  "kind": "collectionType",
+  "collectionName": "meta_stories",
+  "info": {
+    "singularName": "meta-story",
+    "pluralName": "meta-stories",
+    "displayName": "Meta: Story",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "chapters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::meta-chapter.meta-chapter",
+      "mappedBy": "story"
+    },
+    "cast": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-cast.meta-cast",
+      "mappedBy": "stories"
+    },
+    "attractions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-attraction.meta-attraction",
+      "mappedBy": "stories"
+    },
+    "products": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product.product",
+      "inversedBy": "stories"
+    },
+    "studio": {
+      "type": "enumeration",
+      "enum": [
+        "disney",
+        "pixar",
+        "marvel",
+        "lucasfilm",
+        "warner",
+        "fox",
+        "jimhenson"
+      ]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "productGroups": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-group.product-group",
+      "mappedBy": "stories"
+    },
+    "catalogs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::catalog.catalog",
+      "mappedBy": "stories"
+    },
+    "locations": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-location.meta-location",
+      "inversedBy": "stories"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-collection.product-collection",
+      "inversedBy": "stories"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    },
+    "things": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::meta-thing.meta-thing",
+      "mappedBy": "stories"
+    }
+  }
+}

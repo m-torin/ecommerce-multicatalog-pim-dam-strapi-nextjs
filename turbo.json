@@ -1,0 +1,28 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**"],
+      "env": ["NODE_ENV", "VERCEL", "VERCEL_GIT_COMMIT_REF"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "dev:all": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "doppler": {
+      "cache": false
+    },
+    "start": {
+      "cache": false
+    }
+  },
+  "globalDependencies": [".env"]
+}

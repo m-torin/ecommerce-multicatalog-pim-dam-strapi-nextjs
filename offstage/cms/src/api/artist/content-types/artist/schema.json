@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artists",
+  "info": {
+    "singularName": "artist",
+    "pluralName": "artists",
+    "displayName": "Artist",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "cmsId": {
+      "type": "string",
+      "unique": true,
+      "minLength": 4,
+      "maxLength": 10
+    },
+    "baseUrl": {
+      "type": "string",
+      "unique": true
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.marks"
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "general.seo"
+    },
+    "collections": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::product-collection.product-collection",
+      "inversedBy": "artists"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["author", "musician", "painter", "illustrator"],
+      "default": "painter"
+    }
+  }
+}
