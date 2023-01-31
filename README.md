@@ -1,0 +1,1 @@
+# multicatalog-pim-strapi-nextjs
