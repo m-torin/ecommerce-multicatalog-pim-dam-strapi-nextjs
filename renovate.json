@@ -47,14 +47,21 @@
     "automerge": true
   },
   "rangeStrategy": "bump",
-  "labels": ["dependencies"],
+  "labels": [
+    "dependencies"
+  ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["strapi", "next"],
+      "matchPackagePatterns": [
+        "strapi",
+        "next"
+      ],
       "prPriority": 5
     },
     {
-      "matchDatasources": ["go"],
+      "matchDatasources": [
+        "go"
+      ],
       "groupName": "kubernetes packages",
       "groupSlug": "kubernetes-go",
       "matchPackagePrefixes": [
@@ -87,16 +94,28 @@
       ]
     },
     {
-      "matchDepTypes": ["dependencies"],
+      "matchDepTypes": [
+        "dependencies"
+      ],
       "prPriority": 1
     },
     {
-      "matchDepTypes": ["devDependencies"],
-      "matchPackagePatterns": ["lint", "prettier"],
+      "matchDepTypes": [
+        "devDependencies"
+      ],
+      "matchPackagePatterns": [
+        "lint",
+        "prettier"
+      ],
       "automerge": true
     },
     {
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "matchUpdateTypes": [
+        "minor",
+        "patch",
+        "pin",
+        "digest"
+      ],
       "automerge": true
     }
   ],
@@ -114,7 +133,9 @@
     "automergeType": "pr",
     "platformAutomerge": true
   },
-  "baseBranches": ["updates"],
+  "baseBranches": [
+    "updates"
+  ],
   "rollbackPrs": true,
   "ignoreTests": true,
   "configMigration": true,
@@ -125,7 +146,7 @@
   "respectLatest": true,
   "separateMultipleMajor": true,
   "separateMajorMinor": true,
-  "stabilityDays": 2,
+  "minimumReleaseAge": "2 days",
   "timezone": "America/New_York",
   "updateNotScheduled": false,
   "ignorePaths": [
