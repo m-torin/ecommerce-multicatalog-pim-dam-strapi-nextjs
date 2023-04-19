@@ -23,7 +23,7 @@
     "@strapi/plugin-i18n": "4.6.0",
     "@strapi/plugin-sentry": "4.6.0",
     "@strapi/plugin-users-permissions": "4.6.0",
-    "@strapi/strapi": "4.6.0",
+    "@strapi/strapi": "4.8.0",
     "@strapi/typescript-utils": "^4.5.6",
     "axios": "1.2.6",
     "better-sqlite3": "8.0.1",
